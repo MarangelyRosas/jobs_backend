@@ -9,7 +9,7 @@ CREATE TABLE jobs (
     description TEXT NOT NULL,
     company VARCHAR(255),
     location VARCHAR(100),
-    salary NUMERIC CHECK (salary >= 0) -- Adding the CHECK constraint
+    salary NUMERIC CHECK (salary >= 0), -- Adding the CHECK constraint
     url  TEXT NOT NULL,
     is_favorite BOOLEAN DEFAULT FALSE
 );
