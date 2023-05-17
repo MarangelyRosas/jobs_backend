@@ -14,13 +14,13 @@ CREATE TABLE jobs (
     is_favorite BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE reviews (
- id SERIAL PRIMARY KEY,
- reviewer TEXT NOT NULL,
- title TEXT NOT NULL,
- content TEXT NOT NULL,
- rating NUMERIC,
- CHECK (rating >= 0 AND rating <= 5),
- job_id INTEGER NOT NULL REFERENCES jobs (id)
-  ON DELETE CASCADE
-);
+-- CREATE TABLE reviews (
+--  id SERIAL PRIMARY KEY,
+--  reviewer TEXT NOT NULL,
+--  title TEXT NOT NULL,
+--  content TEXT NOT NULL,
+--  rating NUMERIC,
+--  CHECK (rating >= 0 AND rating <= 5),
+--  job_id INTEGER NOT NULL REFERENCES jobs (id)
+--   ON DELETE CASCADE
+-- );
