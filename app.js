@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('Welcome to My Job Listings');
+    res.send('Welcome to My FSW Developer Job Listings');
 });
 
 app.get("*", (req, res) => {
