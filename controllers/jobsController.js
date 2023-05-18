@@ -9,7 +9,7 @@ const {
     updateJob, 
 } = require('../queries/jobs.js');
 
-const {validateURL} = require("../validations/validations.js")
+const {validateURL} = require("../validations/validateURL.js")
 
 // Index (all jobs)
 jobs.get('/', async (req, res) => {
