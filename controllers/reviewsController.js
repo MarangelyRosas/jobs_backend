@@ -2,7 +2,7 @@ const express = require("express");
 const reviews = express.Router({ mergeParams: true });
 const validateReview = require("../validations/validateReview.js");
 const {
-  getAllReviewsByJob,
+  getAllReviews,
   getReview,
   createReview,
   deleteReview,
@@ -12,13 +12,22 @@ const {
 // Index (all reviews)
 reviews.get("/", async (req, res) => {
   const { jobId } = req.params;
-  const { error, result } = await getAllReviewsByJob(jobId);
+  const { error, result } = await getAllReviews(jobId);
   if (error) {
     res.status(500).json({ error: "server error" });
   } else {
     res.status(200).json(result);
   }
 });
+
+//   try {
+//   const allReviews = await getAllReviews(jobId);
+//   res.json(allReviews);
+// } catch (err) {
+//   res.json(err);
+// }
+// });
+
 
 // Show (one/individual review)
 reviews.get("/:reviewId", async (req, res) => {

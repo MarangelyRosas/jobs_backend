@@ -1,10 +1,10 @@
 const db = require("../db/dbConfig.js");
 
-const getAllReviewsByJob = async (jobId) => {
+const getAllReviews = async (job_id) => {
   try {
-    const result = await db.any("SELECT * FROM reviews WHERE job_id=$1", [
-      jobId,
-    ]);
+    const result = await db.any("SELECT * FROM reviews WHERE job_id=$1", 
+      job_id
+    );
     return { result };
   } catch (error) {
     return { error };
@@ -76,7 +76,7 @@ const updateReview = async (id, review) => {
 };
 
 module.exports = {
-  getAllReviewsByJob,
+  getAllReviews,
   getReview,
   createReview,
   deleteReview,

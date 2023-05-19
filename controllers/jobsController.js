@@ -9,6 +9,9 @@ const {
     updateJob, 
 } = require('../queries/jobs.js');
 
+const reviewsController = require("./reviewsController.js");
+jobs.use("/:jobId/reviews", reviewsController);
+
 const {validateURL} = require("../validations/validateURL.js")
 
 // Index (all jobs)
