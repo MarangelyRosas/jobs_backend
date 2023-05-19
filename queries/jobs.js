@@ -44,10 +44,10 @@ const deleteJob = async (id) => { // jobs/id
     }
 };
 
-const updateJob = async (id) => { // jobs/id
+const updateJob = async (id, job) => { // jobs/id
     try {
         const updatedJob = await db.one(
-          `UPDATE FROM jobs SET title=$1, description=$2, company=$3, location=$4, salary=$5, url=$6, is_favorite=$7`,
+          `UPDATE jobs SET title=$1, description=$2, company=$3, location=$4, salary=$5, url=$6, is_favorite=$7 WHERE id=$8 RETURNING *`,
           [job.title, job.description, job.company, job.location, job.salary, job.url, job.is_favorite, id]
         );
         return updatedJob;

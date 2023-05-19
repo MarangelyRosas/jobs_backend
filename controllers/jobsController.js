@@ -42,7 +42,7 @@ jobs.post(
     (req, res, next) => {
         // validate req.body
         const { title, description, company, location, salary, url, is_favorite } = req.body;
-        if (!title || !description || !company || !location || !salary || !url || !is_favorite ) {
+        if (!title || !description || !company || !location || !salary || !url || is_favorite === undefined ) {
             return res
                 .status(422)
                 .json({ error: 'body requires title, description, company, location, salary, url, and is_favorite' });
@@ -82,7 +82,7 @@ jobs.delete('/:id', async (req, res) => {
 });
 
 // Update
-jobs.put('/id', validateURL, async (req, res) => {
+jobs.put('/:id', validateURL, async (req, res) => {
     const { id } = req.params;
     const job = req.body;
     const updatedJob = await updateJob(id, job);

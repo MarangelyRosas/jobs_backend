@@ -1,8 +1,8 @@
 const validateURL = (req, res, next) => { // http://, https://
 
     if (
-        req.body.url.substring(0-7) === "http://" || 
-        req.body.url.substring(0-8) === "https://"
+        req.body.url.substring(0,7) === "http://" || 
+        req.body.url.substring(0,8) === "https://"
     ) {
         return next();
     } else {
