@@ -87,11 +87,8 @@ jobs.put('/id', validateURL, async (req, res) => {
     const job = req.body;
     const updatedJob = await updateJob(id, job);
     console.log(updatedJob);
-    if (updatedJob.id) {
-        res.status(200).json(updatedJob);
-    } else {
-        res.status(404).json("Job not found");
-    }
+    res.status(200).json(updatedJob);
+    
 });
 
 module.exports = jobs;
