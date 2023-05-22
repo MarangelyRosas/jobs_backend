@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('Welcome to My FSW Developer Job Listings');
+    res.send('Welcome to CodeCareer!');
 });
 
 app.use('/jobs', jobsController);
